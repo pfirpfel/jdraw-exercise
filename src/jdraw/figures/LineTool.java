@@ -3,9 +3,6 @@ package jdraw.figures;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
 
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-
 import jdraw.framework.DrawContext;
 
 public class LineTool extends AbstractDrawTool {
@@ -15,18 +12,7 @@ public class LineTool extends AbstractDrawTool {
     private Point anchor;
 
     public LineTool(DrawContext context) {
-        super(context, null);
-    }
-
-    /**
-     * Activates the Line Mode. There will be a specific menu added to the menu bar that provides
-     * settings for Line attributes
-     */
-    @Override
-    public void activate() {
-        this.context.showStatusText("Line Mode");
-        // TODO ? add menu
-
+        super(context, null, "Line");
     }
 
     @Override
@@ -53,16 +39,6 @@ public class LineTool extends AbstractDrawTool {
         newLine = null;
         anchor = null;
         this.context.showStatusText("Line Mode");
-    }
-
-    @Override
-    public Icon getIcon() {
-        return new ImageIcon(getClass().getResource(IMAGES + "line.png"));
-    }
-
-    @Override
-    public String getName() {
-        return "Line";
     }
 
 }

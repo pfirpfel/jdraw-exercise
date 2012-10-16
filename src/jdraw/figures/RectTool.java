@@ -8,9 +8,6 @@ package jdraw.figures;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
 
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-
 import jdraw.framework.DrawContext;
 
 /**
@@ -42,16 +39,7 @@ public class RectTool extends AbstractDrawTool {
 	 * @param context a context to use this tool in.
 	 */
 	public RectTool(DrawContext context) {
-	    super(context, null);
-	}
-
-	/**
-	 * Activates the Rectangle Mode. There will be a
-	 * specific menu added to the menu bar that provides settings for
-	 * Rectangle attributes
-	 */
-	public void activate() {
-		this.context.showStatusText("Rectangle Mode");
+	    super(context, null, "Rectangle");
 	}
 
 	/**
@@ -106,16 +94,6 @@ public class RectTool extends AbstractDrawTool {
 		newRect = null;
 		anchor = null;
 		this.context.showStatusText("Rectangle Mode");
-	}
-	
-	@Override
-	public Icon getIcon() {
-		return new ImageIcon(getClass().getResource(IMAGES + "rectangle.png"));
-	}
-
-	@Override
-	public String getName() {
-		return "Rectangle";
 	}
 
 }

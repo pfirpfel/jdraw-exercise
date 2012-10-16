@@ -3,9 +3,6 @@ package jdraw.figures;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
 
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-
 import jdraw.framework.DrawContext;
 
 public class PolygonTool extends AbstractDrawTool {
@@ -27,12 +24,7 @@ public class PolygonTool extends AbstractDrawTool {
      * @param context a context to use this tool in.
      */
     public PolygonTool(DrawContext context) {
-        super(context, null);
-    }
-
-    @Override
-    public void activate() {
-        this.context.showStatusText("Polygon Mode");
+        super(context, null, "Polygon");
     }
 
     @Override
@@ -57,17 +49,6 @@ public class PolygonTool extends AbstractDrawTool {
         newPoly = null;
         anchor = null;
         this.context.showStatusText("Polygon Mode");
-
-    }
-
-    @Override
-    public Icon getIcon() {
-        return new ImageIcon(getClass().getResource(IMAGES + "polygon.png"));
-    }
-
-    @Override
-    public String getName() {
-        return "Polygon";
     }
 
 }

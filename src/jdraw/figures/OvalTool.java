@@ -3,9 +3,6 @@ package jdraw.figures;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
 
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-
 import jdraw.framework.DrawContext;
 
 public class OvalTool extends AbstractDrawTool {
@@ -25,13 +22,7 @@ public class OvalTool extends AbstractDrawTool {
     private Point anchor = null;
     
     public OvalTool(DrawContext context){
-        super(context, null);
-    }
-
-    @Override
-    public void activate() {
-        this.context.showStatusText("Oval Mode");
-        // TODO ? add menu
+        super(context, null, "Oval");
     }
 
     @Override
@@ -59,16 +50,6 @@ public class OvalTool extends AbstractDrawTool {
         anchor = null;
         this.context.showStatusText("Oval Mode");
 
-    }
-
-    @Override
-    public Icon getIcon() {
-        return new ImageIcon(getClass().getResource(IMAGES + "oval.png"));
-    }
-
-    @Override
-    public String getName() {
-        return "Oval";
     }
 
 }
