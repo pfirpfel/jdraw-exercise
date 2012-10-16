@@ -14,6 +14,7 @@ public class Line extends AbstractFigure implements Figure {
     private static final long serialVersionUID = -4883525024593907346L;
 
     private Line2D.Double line;
+    private static final int PT_DIST = 6;
 
     /**
      * Constructs a line with the given coordinates.
@@ -46,7 +47,11 @@ public class Line extends AbstractFigure implements Figure {
 
     @Override
     public boolean contains(int x, int y) {
-        return line.contains(x, y);
+      if(line.ptLineDist(x, y) <= PT_DIST) {
+        return true;
+      } else {
+        return false;
+      }
     }
 
     @Override
