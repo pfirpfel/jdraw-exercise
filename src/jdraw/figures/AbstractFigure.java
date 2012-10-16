@@ -33,7 +33,7 @@ public abstract class AbstractFigure implements Figure {
 
     @Override
     public void removeFigureListener(FigureListener listener) {
-        if(listener != null && listeners.contains(listener)){
+        if(listener != null){
             listeners.remove(listener);
         }
     }
